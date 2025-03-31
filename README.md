@@ -23,7 +23,7 @@ docker run -d \
   flask-app
 ```
 
-You can stop and delete the image with:
+You can stop the container and delete the image with:
 
 ```bash
 docker stop flask-container
