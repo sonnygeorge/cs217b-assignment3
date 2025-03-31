@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Notebook</h1>
+        
+        <div class="content-wrapper">
+            <div class="sidebar">
+                <button id="create-note-btn">Create New Note</button>
+                <div class="searchable-index">
+                    
+                    <input type="text" id="search-bar" placeholder="Search notes...">
+                    <ul>
+                        {% for note in notes %}
+                            <li class="{% if note.id == current_note.id %}selected{% endif %}">
+                                <a href="{{ url_for('home', note_id=note.id) }}" data-note-id="{{ note.id }}">{{ note.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="note-ui">
+                <div class="note-ui-header">
+                    <input type="text" id="note-title-input" placeholder="Note Title" value="{{ current_note.name }}" data-note-id="{{ current_note.id }}">
+                    <span class="note-created-on">{{ current_note.created_at }}</span>
+                    <button id="delete-note-btn">Delete</button>
+                </div>
+                <div class="note-content">
+                    <textarea id="note-content" placeholder="Note Content">{{ current_note.content }}</textarea>
+                </div>
+                <div class="note-comments">
+                    <h3>Comments</h3>
+                    {% for comment in current_note.comments %}
+                        <div class="note-comment">
+                            <input type="text" placeholder="Type your comment here..." value="{{ comment.comment }}">
+                            <span>{{ comment.date }}</span>
+                            <button class="delete-comment-btn">Delete</button>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button id="add-comment-btn">Add New Comment</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='notebook.js') }}"></script>
+</body>
+</html>

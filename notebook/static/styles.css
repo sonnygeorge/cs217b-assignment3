@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    height: 90vh;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.content-wrapper {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.searchable-index ul {
+    list-style: none;
+}
+
+.searchable-index li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.searchable-index li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.searchable-index li.selected a {
+    font-weight: bold;
+    background-color: rgb(250, 249, 215);
+}
+
+.note-ui {
+    width: 100%;
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.note-ui-header {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#note-title-input {
+    width: 100%;
+    padding: 10px;
+    margin-right: 15px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.note-created-on {
+    color: #666;
+    font-size: 0.8em;
+    align-self: center;
+    margin-right: 15px;
+    min-width: 67px;
+}
+
+.note-content {
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+#note-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+
+.note-comments {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.note-comment {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.note-comment input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.note-comment span {
+    color: #666;
+    margin-right: 15px;
+    font-size: 0.8em;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#create-note-btn {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.delete-comment-btn {
+    background-color: #cc0000;
+}
+
+#delete-note-btn {
+    background-color: #cc0000;
+}
